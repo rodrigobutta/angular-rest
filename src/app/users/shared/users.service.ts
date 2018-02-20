@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+// import { Http } from '@angular/http';
+import { HttpClient } from '../../shared/http-client.service';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
@@ -11,7 +12,7 @@ export class UsersService {
 
   private url: string = "http://al-server.localhost.com/api/users"; //"http://jsonplaceholder.typicode.com/users";
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
   getUsers(){
     return this.http.get(this.url)

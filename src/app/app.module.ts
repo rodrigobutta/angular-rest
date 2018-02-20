@@ -13,6 +13,8 @@ import { routing } from './app.routing';
 import { usersRouting } from "./users/users.routing";
 import { UsersModule } from "./users/users.module";
 
+import { HttpClient } from './shared/http-client.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,11 @@ import { UsersModule } from "./users/users.module";
     usersRouting,
     routing
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    HttpClient
+  ],
+  bootstrap: [
+    AppComponent
+    ]
 })
 export class AppModule { }
